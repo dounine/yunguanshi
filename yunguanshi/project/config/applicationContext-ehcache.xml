@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+   	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="  
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd ">  
+	
+	<!-- 配置eh缓存管理器 --> 
+	<bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+		<!-- 共用ehcache.xml文件 -->
+	    <property name="configLocation" value="classpath:page-ehcache.xml" /> 
+	</bean>
+	 
+	<!-- 配置一个简单的缓存工厂bean对象 -->
+	<bean id="simpleCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+	    <property name="cacheManager" ref="cacheManager" />
+	    <!-- 使用缓存 关联ehcache.xml中的缓存配置 -->
+	    <property name="cacheName" value="mobileCache" />
+	</bean>
+	 
+	<!-- 配置一个缓存拦截器对象，处理具体的缓存业务 -->
+	<bean id="methodCacheInterceptor" class="com.yunguanshi.ehcache.MethodCacheInterceptor">
+	    <property name="cache" ref="simpleCache"/>
+	</bean>
+	 
+	<!-- 参与缓存的切入点对象 (切入点对象，确定何时何地调用拦截器) -->
+	<bean id="methodCachePointCut" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+	    <!-- 配置缓存aop切面 -->
+	    <property name="advice" ref="methodCacheInterceptor" />
+	    <!-- 配置哪些方法参与缓存策略 -->
+	    <!--  
+	        .表示符合任何单一字元                  
+	        ###  +表示符合前一个字元一次或多次                  
+	        ###  *表示符合前一个字元零次或多次                  
+	        ###  \Escape任何Regular expression使用到的符号                  
+	    -->                 
+	    <!-- .*表示前面的前缀(包括包名) 表示print方法-->
+	    <property name="patterns">
+	        <list>
+	            <value>com.yunguanshi.*Controller*\.*read*\.html</value>
+	        </list>
+	    </property>
+	</bean>
+	
+</beans>

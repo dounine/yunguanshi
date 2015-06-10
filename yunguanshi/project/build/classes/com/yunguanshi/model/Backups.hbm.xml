@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="com.yunguanshi.model">
+
+	<class name="Backups" table="ygs_backups_note" >
+	
+		<id name="id" column="backups_id">
+			<generator class="identity" />
+		</id>
+	
+		<property name="backupsName"  not-null="true"/>
+		<property name="backupsUrl"  not-null="true"/>
+		<many-to-one name="user" />
+			
+	</class>
+
+</hibernate-mapping>
