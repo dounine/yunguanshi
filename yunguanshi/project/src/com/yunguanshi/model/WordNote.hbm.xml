@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- 文字记事  -->        
+<hibernate-mapping package="com.yunguanshi.model">
+
+	<class name="WordNote" table="ygs_word_note">			
+		<id name="id" column="word_id">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="user" column="user_id" not-null="true"/>
+		<property name="wordTitle" column="word_title" not-null="true"/><!-- 记事标题 -->
+		<property name="wordContent" column="word_content" not-null="true"/><!-- 记事内容 -->	
+		<property name="timeCreate" column="word_create" not-null="true"/><!-- 创建时间 -->
+		<property name="timeUpdate" column="word_update" not-null="true"/><!-- 修改时间 -->				
+	</class>
+</hibernate-mapping>
