@@ -1,0 +1,16 @@
+Ext.define('CC.base.BaseWindow',{
+	extend:Ext.window.Window,
+	alias:'widget.basewindow',
+	title:'窗口',
+	modal:true,
+	constrain:true,
+	resizable:false,
+	width:400,
+	height:250,
+	buttons:[
+		{
+			text:'保存',
+			ref:'formSave'
+		}
+	]
+});

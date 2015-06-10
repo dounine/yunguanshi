@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="com.yunguanshi.model">
+
+	<class name="Kaptcha" table="ygs_kaptcha">
+	
+		<id name="id" column="kaptcha_id">
+			<generator class="identity" />
+		</id>
+
+		<property name="createTime" />
+		<property name="ipAdress" />
+		<property name="kaptcha" />
+		<property name="email" />
+		<property name="errorCount" />
+
+	</class>
+
+</hibernate-mapping>

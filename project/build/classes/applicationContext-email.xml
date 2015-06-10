@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+   	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="  
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	">	
+	<!-- mail邮箱配置 -->    
+	<bean id="mailSenderInfo" class="com.yunguanshi.email.MailSenderInfo">
+		<property name="mailServerHost">
+			<value>${mail.smtp}</value>
+		</property>
+		<property name="validate">
+			<value>${mail.validate}</value>
+		</property>
+		<property name="userName">
+			<value>${mail.userName}</value>
+		</property>
+		<property name="password">
+			<value>${mail.password}</value>
+		</property>
+		<property name="fromAddress">
+			<value>${mail.fromAddress}</value>
+		</property>
+		<property name="subject">
+			<value>${mail.subject}</value>
+		</property>
+	</bean>
+
+</beans>
