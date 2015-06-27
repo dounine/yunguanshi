@@ -38,3 +38,5 @@ Extjs4.2MVC开源项目介绍
 
 
 10：采用的Extjs4.2采用的是MVC模式实现的、Controller 与 View 都是动态加载进来、所以速度非常快。
+
+11：由于数据自动插入的时候，hibernate无法生成实体表，所以要把hibernate.cfg.xml配置文件中的hbm2ddl.auto的值修改为create
