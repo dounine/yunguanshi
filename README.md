@@ -29,6 +29,8 @@ Extjs4.2MVC开源项目介绍
 
 就把项目 config.properties 里面的 sys.commons.encrypt=yes 修改成 sys.commons.encrypt=no 即可
 
+要自动生成数据要修改sys.commons.autoinsert为yes就可以
+
 
 
 9：想要生成数据库密文密码在 com.yunguanshi.shiro 包下的 Encrypt.java 是用来专门生成密文的。
@@ -36,4 +38,3 @@ Extjs4.2MVC开源项目介绍
 
 
 10：采用的Extjs4.2采用的是MVC模式实现的、Controller 与 View 都是动态加载进来、所以速度非常快。
-
