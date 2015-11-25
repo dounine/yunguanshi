@@ -52,7 +52,7 @@ public class UsersData implements IData{
 				user.setUsername("admin"+i);
 			}else{
 				user.setUsername("admin");
-				user.setPassword("123456");
+				user.setPassword("admin123");
 				user.setLocked(false);
 				department = departmentService.findByName("管理员");
 				user.setDepartment(department);
