@@ -8,7 +8,7 @@
 	
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="jdbc.batch_size">20</property>
-		<property name="hbm2ddl.auto">${hibernate.auto}</property>
+		<property name="hbm2ddl.auto">create</property>
 		<property name="connection.autocommit">true</property>
 
 		<!-- 显示sql语句 -->
