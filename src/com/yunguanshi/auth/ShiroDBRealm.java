@@ -16,7 +16,6 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.yunguanshi.init.InitDatas;
 import com.yunguanshi.model.rbac.User;
 import com.yunguanshi.service.impl.MsgService;
 import com.yunguanshi.service.rbac.impl.DepartmentService;
@@ -24,7 +23,6 @@ import com.yunguanshi.service.rbac.impl.PermissionService;
 import com.yunguanshi.service.rbac.impl.RoleService;
 import com.yunguanshi.service.rbac.impl.TreeNodeService;
 import com.yunguanshi.service.rbac.impl.UserService;
-import com.yunguanshi.utils.PropUtil;
 
 /**
  * 自定义Realm读取数据库用户信息和授权信息
@@ -89,9 +87,6 @@ public class ShiroDBRealm extends AuthorizingRealm{
     	logger.info("Shiro重写开始");
 		//该句作用是重写shiro的密码验证，让shiro用我自己的验证  
         setCredentialsMatcher(new CustomCaptchaMatcher());  
-        if(PropUtil.get("autoinsert").equals("yes")){
-        	new Thread(new InitDatas(this)).start();
-        }
     }
 }
 

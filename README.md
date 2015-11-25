@@ -17,7 +17,7 @@ Extjs4.2MVC开源项目介绍
 
 
 
-6：项目访问路径：http://localhost:8080/yunguanshi/admin/index.html
+6：项目访问路径：http://localhost:8080/yunguanshi/admin/index.html  登录帐户：1234560@163.com  密码：admin123
 
 
 
@@ -28,8 +28,6 @@ Extjs4.2MVC开源项目介绍
 8：数据库用户名和密码都采用加密的方式、如果不想启动加密
 
 就把项目 config.properties 里面的 sys.commons.encrypt=yes 修改成 sys.commons.encrypt=no 即可
-
-要自动生成数据要修改sys.commons.autoinsert为yes就可以
 
 
 

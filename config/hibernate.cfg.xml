@@ -16,6 +16,7 @@
 		<property name="format_sql">false</property>
 		<property name="connection.useUnicode">true</property>
 		<property name="connection.characterEncoding">UTF-8</property>
+		<property name="hibernate.hbm2ddl.import_files">inits.sql</property>
 
 		<!-- 缓存设置 -->
 		<property name="cache.provider_configuration_file_resource_path">classpath:hibernate-ehcache.xml</property>

@@ -132,7 +132,7 @@ public class FormAuthFilter extends FormAuthenticationFilter {
 				request.setAttribute(PropUtil.get("current_user"), user);
 				return onLoginFailure(token,  new AuthenticationException(), request, response);
 			}else{
-				if(subject.isAuthenticated()&&!subject.hasRole("admin")){
+				/*if(subject.isAuthenticated()&&!subject.hasRole("admin")){
 					errorMessage="您非管理员用户,无法登录后台系统。";
 					subject.logout();
 					token.clear();
@@ -142,7 +142,7 @@ public class FormAuthFilter extends FormAuthenticationFilter {
 					user.setUsername(username);
 					request.setAttribute(PropUtil.get("current_user"), user);
 					return onLoginFailure(token,  new AuthenticationException(), request, response);
-				}
+				}*/
 			}
 			return onLoginSuccess(token, subject, request, response);
 		} catch (AuthenticationException e) {

@@ -113,7 +113,7 @@ Ext.define('CC.view.permission.panel', {
 																			var code = this.ownerCt.ownerCt.down('textfield[name=code]');
 																			if(text.getValue().trim().length>0){
 																				Ext.Ajax.request({
-																					url:'hanyun/convert.html',
+																					url:'util/convert.html',
 																					timeout:3000,
 																					params:{chinese:text.getValue()},
 																					success:function(response,result){
